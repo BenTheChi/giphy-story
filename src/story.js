@@ -1,4 +1,4 @@
-const {remote, ipcRenderer} = require('electron');
+const ipcRenderer = require('electron');
 
 const textArea = document.getElementById('story-text')
 const storyGif = document.getElementById('story-gif')
@@ -8,10 +8,7 @@ const pageCounter = document.getElementById('pageCounter')
 
 var title, slides, counter
 
-console.log('something')
-
 ipcRenderer.on('story', (event, story) => {
-    console.log(event, story)
     title = story.title
     slides = story.body
     counter = 0

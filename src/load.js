@@ -9,13 +9,11 @@ const filePath = document.getElementById('loadFile')
 
 
 startBtn.addEventListener('click', (event) => {
-    let story = fs.readFileSync('truman-show.json')
-    story = JSON.parse(story)
-    console.log(story)
+    // let story = fs.readFileSync('truman-show.json')
+    // story = JSON.parse(story)
 })
 
 cancelBtn.addEventListener('click', (event) => {
-    console.log("Triggered")
     let window = remote.getCurrentWindow()
     window.close()
 })

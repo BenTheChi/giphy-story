@@ -17,7 +17,7 @@ const parser = (body) => {
     for(let i=0; i<sections.length; i++){
         let section = sections[i]
         section = section.trim()
-        if(section.length < 1 || section.includes("INT") || section.includes("EXT")){
+        if(section.length < 1){
             sections.splice(i,1)
             continue;
         }
@@ -76,9 +76,7 @@ const buildSlides = async (sections) => {
         promises.push(axios.get(`http://api.giphy.com/v1/gifs/search?q=${keywords.split(' ').join('+')}&api_key=G5mb3AgMEZjKJQoTTsZWoAbC841cxpzw&limit=1`)
             .then((response) => {
                 return {"keywords": keywords.trim(),
-                            "embed_url": response.data.data[0].embed_url
-                            }
-                // console.log(response)
+                        "embed_url": response.data.data[0].embed_url}
             })
             .catch((error) => {
                 console.log(error)

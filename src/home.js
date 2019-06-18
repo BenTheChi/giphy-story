@@ -1,5 +1,5 @@
 'use strict'
-const {remote, ipcRenderer} = require('electron')
+const {remote} = require('electron')
 const BrowserWindow = remote.BrowserWindow
 const path = require('path')
 const axios = require('axios')
@@ -29,7 +29,7 @@ loadBtn.addEventListener('click', (event) => {
           nodeIntegration: true
       }
     })
-    win.webContents.openDevTools()
+    //win.webContents.openDevTools()
 
     win.on('close', () => {
         win = null;
@@ -49,7 +49,6 @@ createBtn.addEventListener('click', (event) => {
       }
     })
     // win.webContents.openDevTools()
-    win.webContents.openDevTools()
 
     win.on('close', () => {
         win = null;
@@ -59,12 +58,6 @@ createBtn.addEventListener('click', (event) => {
 })
 
 randomBtn.addEventListener('click', (event) => {
-    const loadPath = path.join('file://', __dirname, 'story.html')
-    remote.getCurrentWindow().loadURL(loadPath)
+    // const loadPath = path.join('file://', __dirname, 'story.html')
+    // remote.getCurrentWindow().loadURL(loadPath)
 })
-
-// ipcRenderer.on('story-home',(event, story) => {
-//     const loadPath = path.join('file://', __dirname, 'story.html')
-//     remote.getCurrentWindow().loadURL(loadPath)
-//     ipcRenderer.send('story',story)
-// })
