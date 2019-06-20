@@ -12,11 +12,11 @@ function createWindow () {
     height: 800,
     webPreferences: {
       nodeIntegration: true
-  }
+    }
   })
 
   win.loadFile('src/home.html')
-  //win.webContents.openDevTools()
+  win.webContents.openDevTools()
 
   win.on('closed', () => {
     win = null
@@ -26,7 +26,11 @@ function createWindow () {
     {
         label: 'Menu',
         submenu: [
-            {label: 'Home'},
+            {label: 'Home',
+                click(){
+                  win.loadFile('src/home.html')
+                }
+            },
             {label: 'Quit',
                 click(){
                     app.quit()
@@ -39,7 +43,7 @@ function createWindow () {
         submenu: [
             {label: 'See on GitHub',
                 click(){
-                    shell.openExternal('https://github.com/BenTheChi'); //make it open the website in the default browser       
+                    shell.openExternal('https://github.com/BenTheChi/giphy-story'); //make it open the website in the default browser       
                 }
             },
             {label: 'About App',

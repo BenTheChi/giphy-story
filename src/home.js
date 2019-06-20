@@ -9,9 +9,17 @@ const createBtn = document.getElementById('createBtn')
 const randomBtn = document.getElementById('randomBtn')
 const homeGif = document.getElementById('home-gif')
 
-axios.get('http://api.giphy.com/v1/gifs/random?api_key=G5mb3AgMEZjKJQoTTsZWoAbC841cxpzw')
+axios.get('http://api.giphy.com/v1/gifs/random?tag=book&api_key=G5mb3AgMEZjKJQoTTsZWoAbC841cxpzw')
 .then((response) => {
-    homeGif.setAttribute("src", response.data.data.embed_url)
+
+    //Weirdly giphy sometimes doesn't return data so have to sub a gif in case
+    if(response.data.data.length == 0){
+        homeGif.setAttribute("src", "https://giphy.com/embed/8dYmJ6Buo3lYY")
+    }
+
+    else{
+        homeGif.setAttribute("src", response.data.data.embed_url)
+    }
 })
 .catch((error) => {
     homeGif.setAttribute("src", "https://giphy.com/embed/Rkis28kMJd1aE")

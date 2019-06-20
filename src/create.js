@@ -75,8 +75,17 @@ const buildSlides = async (sections) => {
         // IMPLEMENT IMAGES HERE FOR ALL CAPS    
         promises.push(axios.get(`http://api.giphy.com/v1/gifs/search?q=${keywords.split(' ').join('+')}&api_key=G5mb3AgMEZjKJQoTTsZWoAbC841cxpzw&limit=1`)
             .then((response) => {
-                return {"keywords": keywords.trim(),
-                        "embed_url": response.data.data[0].embed_url}
+                var embed_url
+
+                if(response.data.data.length == 0){
+                    embed_url = "https://giphy.com/embed/3o7aTskHEUdgCQAXde"
+                    keywords = "No GIFs found for - " + keywords.trim()
+                }
+                else{
+                    embed_url = response.data.data[0].embed_url
+                }
+
+                return {keywords, embed_url}
             })
             .catch((error) => {
                 console.log(error)
