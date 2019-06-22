@@ -1,5 +1,5 @@
 # giphy-story
-Creates a gif storybook from text.  Start with 'npm start'
+Creates a gif storybook from text.  Start with 'npm start'.  Original design and creation by Ben Chi.
 
 Features:
 - Parses text input into sections according to punctuation and newlines
