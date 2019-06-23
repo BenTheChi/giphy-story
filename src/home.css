@@ -1,0 +1,65 @@
+body {
+    background-color: olive;
+}
+
+iframe {
+    display: inline-block;
+    margin: 15px;
+}
+
+footer {
+    background-color: darkgreen;
+    position: fixed;
+    bottom: 0;    
+    width: 100%;
+}
+
+.headline{
+    background-color: darkgreen;
+    color: white;
+    font-family: 'Carter One', cursive;
+    font-size: 60px;
+    margin-bottom: 0px;
+    padding: 15px;
+}
+
+.content-area{
+    position: relative;
+    margin-top: 40px;
+}
+
+.menu {
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    padding-top: 38px;
+}
+
+.btn {
+    background-color: darkgreen;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    display: block;
+    margin: 25px 15px;
+    color: white;
+    padding: 10px;
+}
+
+.btn:hover,:active {
+    background-color: lightgreen;
+    box-shadow: 5px 5px;
+    color: black;
+}
+
+.contact-links {
+    font-family: 'Carter One', cursive;
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    margin: 10px 60px;
+}
+
+.contact-links:hover{
+    color: black;
+    text-decoration: none;
+}
